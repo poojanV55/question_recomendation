@@ -32,7 +32,8 @@ def combine_data(data):
   
   #droping the not necessary columns
   # data = data.drop(columns=[ 'index','solved_count','rating'])
-  data = data.drop(columns=['contest_id', 'Que_id','index','solved_count','rating'])
+  # data = data.drop(columns=['contest_id', 'Que_id','index','solved_count','rating'])
+  data = data.drop(columns=['contest_id', 'Que_id', 'solved_count', 'rating'])
 
 
   #changing the datatype of column as per requirment
@@ -80,18 +81,26 @@ def recommend_questions(problem_title, data, combine, transform):
     question_indices = [i[0] for i in sim_scores]
 
     #Stores the data of the recommended questions
-    question_id = data['Que_id'].iloc[question_indices]
+    # question_id = data['Que_id'].iloc[question_indices]
     question_title = data['name'].iloc[question_indices]
-    question_tags = data['tags'].iloc[question_indices]
+    question_tags = data['tags'].iloc[question_indices].str.split(', ')
     contest_id = data['contest_id'].iloc[question_indices]
+    question_index = data['index'].iloc[question_indices]
+    solved_count = data['solved_count'].iloc[question_indices]
+    rating = data['rating'].iloc[question_indices]
 
     #Create a dataframe of the recommended questions
-    recommendation_data = pd.DataFrame(columns=['Question_Id','Question_Name','Tags','Contest_id'])
+    # recommendation_data = pd.DataFrame(columns=['Question_Id','Question_Name','Tags','Contest_Id','Question_Index'])
+    recommendation_data = pd.DataFrame(columns=['name','tags','id','index','solved_count','rating'])
 
-    recommendation_data['Question_Id'] = question_id
-    recommendation_data['Question_Name'] = question_title
-    recommendation_data['Tags'] = question_tags
-    recommendation_data['Contest_id'] = contest_id
+
+    # recommendation_data['Question_Id'] = question_id
+    recommendation_data['name'] = question_title
+    recommendation_data['tags'] = question_tags
+    recommendation_data['id'] = contest_id
+    recommendation_data['index'] = question_index
+    recommendation_data['solved_count'] = solved_count
+    recommendation_data['rating'] = rating
 
     return recommendation_data
 
