@@ -5,10 +5,13 @@ import recommendation
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/',methods = ['GET'])
+def sayhello():
+    return 'App running'
 
 @app.route('/question', methods=['GET'])
-def recommend_movies():
-    res = recommendation.results(request.args.get('Pawns'))
+def recommend_question():
+    res = recommendation.results(request.args.get('question_name'))
     return jsonify(res)
 
 
