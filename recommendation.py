@@ -75,7 +75,7 @@ def recommend_questions(problem_title, data, combine, transform):
     # Create a cosine score of the question relation in a list
     sim_scores = list(enumerate(transform[index]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:21]
+    sim_scores = sim_scores[1:51]
     
     #Store top 20 questions in a list
     question_indices = [i[0] for i in sim_scores]
