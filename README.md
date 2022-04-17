@@ -1,2 +1,7 @@
-# question_recomendation
-Deployed on heroku
+# DSA_Question_recomendation_System
+
+Over the last decade, Recommendation system has the major impact on every major online platform be it social media or e-commerce. Recommender system are the software application which gives personalized suggestion of the product or the service provided to the user based on their activity and choices. Now-a- days we can see the recommendation system being implemented in many domain like entertainment, e-commerce etc. but it is yet to be implemented in the area of competitive coding. The user engages with the competitive coding websites for sharpening their problem solving skills and also programming skills. Competitors practice coding questions and compete with fellow users all over the world. Major companies are using the competitive coding test for their candidate selection.
+
+The DSA question recommendation provided to the user are based on certain factors such as questions solved previously by the user, the topics covered, user’s weak topics and various other. The competitive coding sites have a great user base but it has not seen the advancement of recommendation yet. The user needs to manually select the question to solve which is suitable to their skills and interests having wasted a lot of time.
+
+In this project we are trying to solve the above mention problem for the user of competitive coding sites, which will recommend questions to the user not having to search manually for a question to solve. This would save the time and user will be able to cover the particular topic and practice its questions.
